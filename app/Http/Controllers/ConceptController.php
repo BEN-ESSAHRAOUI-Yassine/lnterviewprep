@@ -28,9 +28,7 @@ class ConceptController extends Controller
 
         $concepts = $query->with('generatedQuestions')->get();
         $showArchived = request()->boolean('show_archived');
-        $archivedConcepts = $showArchived
-            ? $domain->concepts()->onlyTrashed()->get()
-            : collect();
+        $archivedConcepts = $domain->concepts()->onlyTrashed()->get();
 
         return view('concepts.index', compact('domain', 'concepts', 'archivedConcepts', 'showArchived'));
     }
@@ -64,9 +62,7 @@ class ConceptController extends Controller
         $concept->load('generatedQuestions');
 
         $showArchived = request()->boolean('show_archived');
-        $archivedQuestions = $showArchived
-            ? $concept->generatedQuestions()->onlyTrashed()->get()
-            : collect();
+        $archivedQuestions = $concept->generatedQuestions()->onlyTrashed()->get();
 
         return view('concepts.show', compact('domain', 'concept', 'archivedQuestions', 'showArchived'));
     }
