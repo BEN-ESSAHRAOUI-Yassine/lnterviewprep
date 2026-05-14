@@ -2,17 +2,53 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+    --bg-base: #0f1117;
+    --bg-surface: #1a1d27;
+    --bg-elevated: #242736;
+    --border: #2e3245;
+    --accent: #6366f1;
+    --accent-soft: #4f46e5;
+    --text-primary: #f1f3f9;
+    --text-muted: #8b90a7;
+    --text-faint: #4a4f6a;
+    --status-review: #ef4444;
+    --status-progress: #f59e0b;
+    --status-mastered: #22c55e;
+    --level-junior: #38bdf8;
+    --level-mid: #a78bfa;
+    --level-senior: #fb7185;
+}
+
+[data-theme="light"] {
+    --bg-base: #f3f4f6;
+    --bg-surface: #ffffff;
+    --bg-elevated: #e5e7eb;
+    --border: #d1d5db;
+    --accent: #6366f1;
+    --accent-soft: #4f46e5;
+    --text-primary: #111827;
+    --text-muted: #6b7280;
+    --text-faint: #9ca3af;
+    --status-review: #dc2626;
+    --status-progress: #d97706;
+    --status-mastered: #16a34a;
+    --level-junior: #0284c7;
+    --level-mid: #7c3aed;
+    --level-senior: #db2777;
+}
+
 @layer components {
     .btn-primary {
         @apply bg-indigo-600 hover:bg-indigo-700 text-white font-mono text-sm px-5 py-2.5 rounded-md transition-colors;
     }
 
     .btn-ghost {
-        @apply bg-transparent hover:bg-elevated border border-border text-[#8b90a7] hover:text-[#f1f3f9] font-mono text-sm px-4 py-2 rounded-md transition-colors;
+        @apply bg-transparent hover:bg-[var(--bg-elevated)] border border-[var(--border)] text-[var(--text-muted)] hover:text-[var(--text-primary)] font-mono text-sm px-4 py-2 rounded-md transition-colors;
     }
 
     .icon-btn {
-        @apply p-1.5 rounded hover:bg-elevated text-[#8b90a7] hover:text-[#f1f3f9] transition-colors;
+        @apply p-1.5 rounded hover:bg-[var(--bg-elevated)] text-[var(--text-muted)] hover:text-[var(--text-primary)] transition-colors;
     }
 
     .badge {
