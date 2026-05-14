@@ -36,4 +36,4 @@ class GeneratedQuestionPolicy
     {
         return $user->id === $generatedQuestion->concept->domain->user_id;
     }
-}
+}//
