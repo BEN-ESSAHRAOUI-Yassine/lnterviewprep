@@ -1,3 +1,43 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+    .btn-primary {
+        @apply bg-indigo-600 hover:bg-indigo-700 text-white font-mono text-sm px-5 py-2.5 rounded-md transition-colors;
+    }
+
+    .btn-ghost {
+        @apply bg-transparent hover:bg-elevated border border-border text-[#8b90a7] hover:text-[#f1f3f9] font-mono text-sm px-4 py-2 rounded-md transition-colors;
+    }
+
+    .icon-btn {
+        @apply p-1.5 rounded hover:bg-elevated text-[#8b90a7] hover:text-[#f1f3f9] transition-colors;
+    }
+
+    .badge {
+        @apply font-mono text-xs px-2 py-0.5 rounded-sm font-semibold uppercase tracking-wide;
+    }
+
+    .badge-junior  { @apply bg-sky-900/50 text-sky-300; }
+    .badge-mid     { @apply bg-violet-900/50 text-violet-300; }
+    .badge-senior  { @apply bg-rose-900/50 text-rose-300; }
+
+    .badge-to_review   { @apply bg-red-900/50 text-red-300; }
+    .badge-in_progress { @apply bg-amber-900/50 text-amber-300; }
+    .badge-mastered    { @apply bg-green-900/50 text-green-300; }
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    opacity: 0.03;
+    pointer-events: none;
+    z-index: -1;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+}
