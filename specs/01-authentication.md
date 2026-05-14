@@ -17,7 +17,7 @@ Implement a complete session-based authentication system from scratch using Lara
 ## 2. Context & Constraints
 
 - Laravel 13, Blade only, no JavaScript frameworks
-- No Breeze, no Jetstream, no Fortify, no any auth scaffold
+- Use Breeze, no Jetstream, no Fortify, no any auth scaffold
 - Manual controllers, manual routes, manual views
 - Authentication uses Laravel's `Auth` facade and `auth` middleware
 - Passwords hashed with `bcrypt` via `Hash::make()`
@@ -125,7 +125,7 @@ password → required | string
 
 ## 10. What the Agent Must NOT Do
 
-- ❌ Do not install Breeze, Jetstream, Fortify, or any auth package
+- ❌ Do not install Jetstream, Fortify, or any auth package
 - ❌ Do not use `$request->validate()` directly in controllers — use FormRequest classes
 - ❌ Do not generate token-based or API auth
 - ❌ Do not create a `User` model — it already exists in Laravel's default scaffold

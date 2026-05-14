@@ -264,7 +264,7 @@ Laravel Debugbar must be installed in dev (`composer require barryvdh/laravel-de
 
 ## 11. Authentication Rules
 
-- Use Laravel's built-in Auth (manual implementation — no Breeze, no Jetstream, no Fortify)
+- Use Laravel's built-in Auth or Breeze (manual implementation — no Jetstream, no Fortify)
 - Session-based authentication
 - All routes except login/register must be behind `auth` middleware
 - Ownership is enforced via Laravel Policy classes — see Section 11a and `specs/07-policies.md`
@@ -332,7 +332,7 @@ Laravel 13 auto-discovers policies by naming convention (`ModelPolicy`). Do NOT 
 
 ## 13. What the Agent Must NEVER Do
 
-- ❌ Never install Breeze, Jetstream, Fortify, or any auth scaffold package
+- ❌ Never install Jetstream, Fortify, or any auth scaffold package
 - ❌ Never use `$request->validate()` directly in controllers — always use Form Request classes
 - ❌ Never hardcode the Groq API key anywhere in PHP files
 - ❌ Never commit `.env` — only `.env.example`
