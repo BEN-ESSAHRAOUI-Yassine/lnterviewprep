@@ -15,10 +15,10 @@ Route::middleware('auth')->group(function () {
     Route::resource('domains', DomainController::class)->except(['index', 'archived']);
     Route::get('/domains', [DomainController::class, 'index'])->name('domains.index');
 
-    Route::get('/domains/{domain}/concepts', [ConceptController::class, 'index'])->name('concepts.index');
-    Route::patch('/domains/{domain}/concepts/{concept}/restore', [ConceptController::class, 'restore'])->name('concepts.restore');
-    Route::delete('/domains/{domain}/concepts/{concept}/force-delete', [ConceptController::class, 'forceDelete'])->name('concepts.forceDelete');
-    Route::patch('/domains/{domain}/concepts/{concept}/status', [ConceptController::class, 'updateStatus'])->name('concepts.updateStatus');
+    Route::get('/domains/{domain}/concepts', [ConceptController::class, 'index'])->name('domains.concepts.index');
+    Route::patch('/domains/{domain}/concepts/{concept}/restore', [ConceptController::class, 'restore'])->name('domains.concepts.restore');
+    Route::delete('/domains/{domain}/concepts/{concept}/force-delete', [ConceptController::class, 'forceDelete'])->name('domains.concepts.forceDelete');
+    Route::patch('/domains/{domain}/concepts/{concept}/status', [ConceptController::class, 'updateStatus'])->name('domains.concepts.updateStatus');
     Route::resource('domains.concepts', ConceptController::class)->except(['index']);
 
     Route::post('/concepts/{concept}/generate', [GeneratedQuestionController::class, 'store'])->name('generated-questions.store');

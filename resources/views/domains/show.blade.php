@@ -30,7 +30,7 @@
 @php
 $showArchived = request()->boolean('show_archived');
 $activeConcepts = $domain->concepts;
-$archivedConcepts = $showArchived ? $domain->concepts()->onlyTrashed()->get() : collect();
+$archivedConcepts = $domain->concepts()->onlyTrashed()->get();
 @endphp
 
 @if($activeConcepts->isEmpty() && $archivedConcepts->isEmpty())
